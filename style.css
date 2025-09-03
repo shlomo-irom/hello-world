@@ -1,0 +1,75 @@
+/* עיצוב כללי */
+body {
+  font-family: "Segoe UI", Arial, sans-serif;
+  direction: rtl;
+  margin: 0;
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  color: #f5f5f5;
+}
+
+/* תפריט עליון */
+header {
+  background: rgba(0, 0, 0, 0.7);
+  padding: 15px;
+  text-align: center;
+  position: sticky;
+  top: 0;
+}
+
+nav a {
+  margin: 0 15px;
+  text-decoration: none;
+  color: #f5f5f5;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+nav a:hover {
+  color: #00c6ff;
+}
+
+/* תוכן מרכזי */
+.content {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 30px;
+  margin: 40px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+}
+
+/* כותרות */
+h1, h2 {
+  color: #00c6ff;
+  text-shadow: 1px 1px 2px #000;
+}
+
+/* טפסים */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+input, textarea {
+  padding: 12px;
+  border-radius: 6px;
+  border: none;
+  outline: none;
+  font-size: 16px;
+}
+
+button {
+  padding: 12px;
+  border: none;
+  border-radius: 6px;
+  background: #00c6ff;
+  color: #fff;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+button:hover {
+  background: #009ec3;
+}
