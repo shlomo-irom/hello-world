@@ -1,56 +1,58 @@
-.stats-header {
-    background: #800080; /* סגול כהה */
-    color: white;
-    padding: 20px;
-    text-align: center;
+/* סרגל ניווט */
+.navbar {
+  background: linear-gradient(90deg, #6a0dad, #9c27b0);
+  padding: 12px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
 
-.stats-section {
-    padding: 30px;
-    background: #f3e6f3; /* סגול בהיר */
-    text-align: center;
+.navbar ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  gap: 30px;
 }
 
-table {
-    margin: 0 auto 20px auto;
-    border-collapse: collapse;
-    width: 80%;
+.navbar a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 18px;
+  transition: color 0.3s;
 }
 
-th, td {
-    border: 1px solid #800080;
-    padding: 12px;
-    text-align: center;
+.navbar a:hover {
+  color: #ffd700;
 }
 
-th {
-    background-color: #d9b3ff; /* סגול בהיר */
-    color: #400040;
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-width: 400px;
+  margin: auto;
 }
 
-tr:nth-child(even) {
-    background-color: #f2d9ff;
+.contact-form input,
+.contact-form textarea {
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
 }
 
-.buttons .btn {
-    display: inline-block;
-    margin: 10px;
-    padding: 15px 25px;
-    background: #800080;
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-    border-radius: 8px;
-    transition: background 0.3s;
+.contact-form button {
+  background: linear-gradient(90deg, #6a0dad, #9c27b0);
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
 }
 
-.buttons .btn:hover {
-    background: #660066;
-}
-
-.stats-footer {
-    background: #800080;
-    color: white;
-    text-align: center;
-    padding: 15px;
+.contact-form button:hover {
+  background: #4b0082;
 }
