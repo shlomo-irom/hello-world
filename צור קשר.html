@@ -1,87 +1,40 @@
 <!DOCTYPE html>
-<html lang="he">
+<html lang="he" dir="rtl">
 <head>
   <meta charset="UTF-8">
   <title>צור קשר</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      direction: rtl;
-      margin: 0;
-      background-image: url('https://images.unsplash.com/photo-1569025690938-a00729c9e6c0');
-      background-size: cover;
-      background-position: center;
-      color: #fff;
-    }
-    header {
-      background: rgba(0, 0, 0, 0.7);
-      padding: 15px;
-      text-align: center;
-    }
-    nav a {
-      margin: 0 15px;
-      text-decoration: none;
-      color: #fff;
-      font-weight: bold;
-    }
-    nav a:hover {
-      text-decoration: underline;
-    }
-    .content {
-      background: rgba(0, 0, 0, 0.6);
-      padding: 20px;
-      margin: 40px;
-      border-radius: 12px;
-    }
-    form {
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-    }
-    input, textarea {
-      padding: 10px;
-      border-radius: 6px;
-      border: none;
-    }
-    button {
-      padding: 10px;
-      border: none;
-      border-radius: 6px;
-      background: #4CAF50;
-      color: #fff;
-      cursor: pointer;
-    }
-    button:hover {
-      background: #45a049;
-    }
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <nav class="navbar">
-  <ul>
-    <li><a href="index.html">דף הבית</a></li>
-    <li><a href="about.html">אודות</a></li>
-    <li><a href="צור קשר.html">צור קשר</a></li>
-  </ul>
-</nav>
+    <ul>
+      <li><a href="index.html">דף הבית</a></li>
+      <li><a href="about.html">אודות</a></li>
+      <li><a href="צור קשר.html">צור קשר</a></li>
+    </ul>
+  </nav>
 
   <header>
-    <nav>
-      <a href="index.html">דף הבית</a>
-      <a href="about.html">אודות</a>
-      <a href="contact.html">צור קשר</a>
-    </nav>
+    <h1>צור קשר</h1>
   </header>
 
-  <div class="content">
-    <h1>צור קשר</h1>
-    <form>
-      <input type="text" placeholder="שם מלא" required>
-      <input type="email" placeholder="כתובת אימייל" required>
-      <textarea placeholder="הודעה" rows="5" required></textarea>
+  <main class="container">
+    <form class="contact-form">
+      <label>שם מלא:</label>
+      <input type="text" placeholder="הכנס שם מלא">
+
+      <label>אימייל:</label>
+      <input type="email" placeholder="example@email.com">
+
+      <label>הודעה:</label>
+      <textarea placeholder="כתוב כאן את הודעתך..."></textarea>
+
       <button type="submit">שלח</button>
     </form>
-  </div>
+  </main>
+
+  <footer>
+    <p>© 2025 דף פנסיוני לדוגמא</p>
+  </footer>
 </body>
 </html>
-
