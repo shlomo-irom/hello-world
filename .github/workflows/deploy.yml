@@ -5,27 +5,28 @@ on:
     branches:
       - main
 
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
 jobs:
   deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
     runs-on: ubuntu-latest
-    permissions:
-      contents: read
-      pages: write
-      id-token: write
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v3
-
-      - name: Build / Prepare
-        run: |
-          # אם יש לך build steps, הוסף כאן. אחרת פשוט סתם תעלה את הקבצים.
-          echo "No build steps, just deploy"
+        uses: actions/checkout@v4
 
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v2
+        uses: actions/upload-pages-artifact@v3
         with:
-          path: '.'  # מעלה את כל הקבצים מה-root של הריפו
+          path: '.'  # כל הקבצים של האתר
 
       - name: Deploy to GitHub Pages
-        uses: actions/deploy-pages@v1
+        id: deployment
+        uses: actions/deploy-pages@v4
