@@ -1,0 +1,32 @@
+name: Deploy Website
+
+on:
+  push:
+    branches:
+      - main  # כל דחיפה ל-main תפעיל את הפייפליין
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3
+
+    - name: Set up Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '20'  # אם יש לך JS/Node באתר, אחרת אפשר לדלג
+
+    - name: Install dependencies
+      run: npm install  # אם אין חבילות JS אפשר למחוק שורה זו
+
+    - name: Build project
+      run: npm run build  # אם אין build, אפשר למחוק או להחליף ב-copy פשוט
+
+    - name: Deploy to GitHub Pages
+      uses: peaceiris/actions-gh-pages@v6
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./  # אם האתר נמצא בתיקייה אחרת, שנה בהתאם
+
