@@ -3,7 +3,7 @@ name: Deploy Website
 on:
   push:
     branches:
-      - main   # כל push ל-main יפעיל את הפייפליין
+      - main
 
 jobs:
   deploy:
@@ -17,9 +17,9 @@ jobs:
         uses: actions/configure-pages@v3
 
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v1
+        uses: actions/upload-pages-artifact@v2
         with:
-          path: '.'  # מעלה את כל הקבצים מה-root של הריפו
+          path: '.'  # כל הקבצים מה-root של הריפו
 
       - name: Deploy to GitHub Pages
         uses: actions/deploy-pages@v1
