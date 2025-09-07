@@ -57,4 +57,13 @@ nav a:hover {
 ----------------------------- */
 .categories {
     background-color: #e0f7fa;
-    paddin
+   paddin
+.card img,
+.category-card img {
+    width: 150px;       /* רוחב אחיד */
+    height: 150px;      /* גובה אחיד */
+    object-fit: cover;  /* חותך את התמונה אם היא לא מתאימה */
+    border-radius: 12px 12px 0 0;
+}
+
+
