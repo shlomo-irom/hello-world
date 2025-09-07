@@ -88,12 +88,27 @@ nav a:hover {
 }
 
 /* תמונות בכרטיסים וקטגוריות */
-.card img,
+/* כרטיסי קטגוריות */
+.category-card {
+    display: block;
+    width: 180px;        /* רוחב הכרטיס */
+    margin: 10px;        /* רווח בין הכרטיסים */
+    text-align: center;
+    text-decoration: none;
+    color: inherit;
+}
+
 .category-card img {
-    width: 100%;       /* תתאים לרוחב הכרטיס */
-    height: 120px;     /* גובה אחיד */
-    object-fit: cover; /* חיתוך אוטומטי למלא את הקופסה */
+    width: 100%;         /* תמלא את רוחב הכרטיס */
+    height: 120px;       /* גובה אחיד */
+    object-fit: cover;   /* חותך את התמונה בלי לעוות */
     border-radius: 12px 12px 0 0;
+}
+
+.category-card h3 {
+    margin: 10px 0 0 0;
+    font-size: 18px;
+    color: #004d66;
 }
 
 .card h3 {
@@ -171,4 +186,5 @@ footer {
     padding: 15px;
     margin-top: 40px;
 }
+
 
