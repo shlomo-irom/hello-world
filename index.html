@@ -1,59 +1,58 @@
 <!DOCTYPE html>
-<html lang="he" dir="rtl">
+<html lang="he">
 <head>
   <meta charset="UTF-8">
-  <title>דף פנסיוני</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>השקעות כהלכה</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <nav class="navbar">
-  <ul>
-    <li><a href="index.html">דף הבית</a></li>
-    <li><a href="about.html">אודות</a></li>
-    <li><a href="צור קשר.html">צור קשר</a></li>
-  </ul>
-</nav>
-
   <header>
-    <h1>ברוכים הבאים לדף הפנסיה שלי</h1>
+    <nav>
+      <a href="index.html">דף הבית</a>
+      <a href="about.html">אודות</a>
+      <a href="contact.html">צור קשר</a>
+      <a href="articles.html">מאמרים</a>
+    </nav>
   </header>
 
-  <main class="container">
-    <img src="images/bursa.jpg" alt="מדדים מהבורסה">
-    <p>כאן תוכלו לראות מדדים של הבורסה, טיפים והשוואות.</p>
+  <section class="hero">
+    <h1>השקעות כהלכה</h1>
+    <p>מדריך להשקעות, מדדים ומינוף – הכל עם הכוונה נכונה</p>
+  </section>
 
-   <h2>גרפים חיים מהבורסה</h2>
-<div class="charts-grid">
-  <div class="chart">
-    <h3>S&P 500</h3>
-    <iframe src="https://www.tradingview.com/widgetembed/?symbol=SPX"
-            width="100%" height="400" frameborder="0"></iframe>
-  </div>
-
-  <div class="chart">
-    <h3>NASDAQ</h3>
-    <iframe src="https://www.tradingview.com/widgetembed/?symbol=NASDAQ:IXIC"
-            width="100%" height="400" frameborder="0"></iframe>
-  </div>
-
-  <div class="chart">
-    <h3>ת"א 125</h3>
-    <iframe src="https://www.tradingview.com/widgetembed/?symbol=TASE:TA-125"
-            width="100%" height="400" frameborder="0"></iframe>
-  </div>
-</div>
-
-
-    <h2>קישורים שימושיים</h2>
-    <div class="links">
-      <a href="https://www.bloomberg.com" target="_blank">Bloomberg</a>
-      <a href="https://www.globes.co.il" target="_blank">כלכליסט</a>
-      <a href="https://www.investing.com" target="_blank">Investing</a>
+  <section class="categories">
+    <h2>קטגוריות השקעה</h2>
+    <div class="cards">
+      <div class="card">
+        <img src="images/stocks.jpg" alt="מניות">
+        <h3>מניות</h3>
+      </div>
+      <div class="card">
+        <img src="images/bonds.jpg" alt="אגח">
+        <h3>אג"ח</h3>
+      </div>
+      <div class="card">
+        <img src="images/index.jpg" alt="מדדי מניות">
+        <h3>מדדי מניות</h3>
+      </div>
+      <div class="card">
+        <img src="images/funds.jpg" alt="קרנות כספיות">
+        <h3>קרנות כספיות</h3>
+      </div>
+      <div class="card">
+        <img src="images/hedge.jpg" alt="קרנות גידור">
+        <h3>קרנות גידור</h3>
+      </div>
+      <div class="card">
+        <img src="images/leverage.jpg" alt="מינוף">
+        <h3>מינוף</h3>
+      </div>
     </div>
-  </main>
+  </section>
 
   <footer>
-    <p>© 2025 דף פנסיוני לדוגמא</p>
+    <p>© 2025 השקעות כהלכה</p>
   </footer>
 </body>
 </html>
