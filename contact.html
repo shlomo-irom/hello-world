@@ -16,34 +16,33 @@
     </nav>
   </header>
 
-  <main class="contact">
-    <h1>צור קשר</h1>
-    <form class="contact-form">
-      <input type="text" placeholder="שם מלא" required>
-      <input type="email" placeholder="אימייל" required>
-      <textarea placeholder="הודעה" rows="5" required></textarea>
-      <button type="submit">שלח</button>
-    </form>
-  </main>
-<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeM8Jef9uOMxMFK4wA3z5qReriOLETkRDwproTA7ibAlIze5A/viewform?embedded=true" width="640" height="381" frameborder="0" marginheight="0" marginwidth="0">בטעינה…</iframe>
-  <form action="https://formspree.io/f/mdklyrpp" method="POST">
-  <label>שם:
-    <input type="text" name="name" required>
+ <main class="contact">
+  <h1>צור קשר</h1>
+</main>
+
+<form action="https://formspree.io/f/mdklyrpp" method="POST" class="contact-form">
+  <label>
+    שם:
+    <input type="text" name="name" class="form-input" required>
   </label>
-  <label>אימייל:
-    <input type="email" name="email" required>
+  <label>
+    אימייל:
+    <input type="email" name="email" class="form-input" required>
   </label>
-  <label>הודעה:
-    <textarea name="message" required></textarea>
+  <label>
+    הודעה:
+    <textarea name="message" class="form-textarea" required></textarea>
   </label>
-  <button type="submit">שלח</button>
+  <button type="submit" class="form-button">שלח</button>
 </form>
+
 
   <footer>
     <p>© 2025 השקעות כהלכה</p>
   </footer>
 </body>
 </html>
+
 
 
 
