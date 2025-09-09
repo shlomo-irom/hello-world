@@ -243,4 +243,36 @@ footer {
   background: linear-gradient(90deg, #0056b3, #0099cc);
 }
 
+.stats-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px auto;
+  font-size: 18px;
+  background: white;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.stats-table th {
+  background: #004d66;
+  color: white;
+  padding: 12px;
+  text-align: center;
+}
+
+.stats-table td {
+  padding: 12px;
+  text-align: center;
+  border-bottom: 1px solid #ddd;
+}
+
+.stats-table tr:nth-child(even) {
+  background: #f9f9f9;
+}
+
+.stats-table tr:hover {
+  background: #e0f7fa;
+}
+
 
