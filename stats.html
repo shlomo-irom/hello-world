@@ -59,7 +59,62 @@
     </tr>
   </tbody>
 </table>
+<body>
+  <h1>רשימת מדדים מהבורסה</h1>
+  <table id="indicesTable">
+    <thead>
+      <tr>
+        <th>שם המדד</th>
+        <th>קוד</th>
+        <th>ערך נוכחי</th>
+        <th>שינוי יומי</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- כאן יכנסו הנתונים מה־API -->
+    </tbody>
+  </table>
 
+  <script>
+    const API_KEY = "5b0bb420-c5b2-4f97-9ce3-6c02ba07f9db";
+    const API_URL = "https://datawise.tase.co.il/v1/basic-indices/indices-list";
+
+    async function fetchIndices() {
+      try {
+        const response = await fetch(API_URL, {
+          headers: {
+            "Authorization": `Bearer ${API_KEY}`
+          }
+        });
+
+        if (!response.ok) throw new Error("שגיאה בטעינת הנתונים");
+
+        const data = await response.json();
+        const tableBody = document.querySelector("#indicesTable tbody");
+
+        // ניקוי הטבלה לפני הכנסת נתונים
+        tableBody.innerHTML = "";
+
+        data.forEach(index => {
+          const row = document.createElement("tr");
+          row.innerHTML = `
+            <td>${index.name}</td>
+            <td>${index.symbol}</td>
+            <td>${index.value}</td>
+            <td>${index.change}</td>
+          `;
+          tableBody.appendChild(row);
+        });
+
+      } catch (error) {
+        console.error("Error fetching indices:", error);
+      }
+    }
+
+    // טעינת הנתונים בעת טעינת הדף
+    fetchIndices();
+  </script>
+</body>
         <div class="buttons">
             <a href="index.html" class="btn">חזרה לדף הבית</a>
             <a href="about.html" class="btn">דף מידע נוסף</a>
