@@ -142,6 +142,15 @@
         </div>
     </section>
 </html>
+<script>
+fetch("/api/security/103010")
+  .then(response => response.json())
+  .then(data => {
+    console.log(data);
+    // כאן אפשר להכניס את הנתונים לתוך הדף
+  })
+  .catch(err => console.error(err));
+</script>
 
     <footer class="stats-footer">
         <p>© 2025 דף פנסיוני לדוגמה</p>
