@@ -1,6 +1,82 @@
 <!DOCTYPE html>
 <html lang="he">
 <head>
+    <meta charset="UTF-8">
+    <title>טבלת מדדים</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+    <nav>
+      <a href="index.html">דף הבית</a>
+      <a href="about.html">אודות</a>
+      <a href="contact.html">צור קשר</a>
+      <a href="articles.html">מאמרים</a>
+      <a href="Podcasts.html">פודקאסטים</a>
+      <a href="Podcasts.html">קורסים</a>
+     <a href="stats.html">סטיסטיקות</a>    
+    </nav>
+  </header>
+
+    <header class="stats-header">
+        <h1>טבלת ביצועי השקעות</h1>
+    </header>
+
+    <section class="stats-section">
+        <p>להלן דוגמאות למדדים פנסיוניים ובורסה:</p>
+        <table>
+          <table class="stats-table">
+  <thead>
+    <tr>
+      <th>מדד</th>
+      <th>תשואה יומית (%)</th>
+      <th>תשואה חודשית (%)</th>
+      <th>תשואה שנתית (%)</th>
+      <th>ממוצע 5 שנים (%)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>TASE 125</td>
+      <td>+0.6</td>
+      <td>+2.4</td>
+      <td>+7.8</td>
+      <td>+5.1</td>
+    </tr>
+    <tr>
+      <td>S&P 500</td>
+      <td>+0.3</td>
+      <td>+1.9</td>
+      <td>+12.3</td>
+      <td>+9.5</td>
+    </tr>
+    <tr>
+      <td>Nasdaq</td>
+      <td>-0.2</td>
+      <td>+3.4</td>
+      <td>+15.7</td>
+      <td>+12.1</td>
+    </tr>
+  </tbody>
+</table>
+<body>
+  <h1>רשימת מדדים מהבורסה</h1>
+  <table id="indicesTable">
+    <thead>
+      <tr>
+        <th>שם המדד</th>
+        <th>קוד</th>
+        <th>ערך נוכחי</th>
+        <th>שינוי יומי</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- כאן יכנסו הנתונים מה־API -->
+    </tbody>
+  </table>
+  <!DOCTYPE html>
+<html lang="he">
+<head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>מדד S&P 500 בזמן אמת</title>
@@ -10,15 +86,39 @@
   <p id="sp500">טוען נתונים...</p>
 
   <script>
+    const API_KEY = "5b0bb420-c5b2-4f97-9ce3-6c02ba07f9db";
+    const API_URL = "https://datawise.tase.co.il/v1/basic-indices/indices-list";
     const apiKey = 'SD0025F3M49PKC8Q'; // ה-API key שלך
     const symbol = 'SPY'; // סימול של מדד S&P 500
     const interval = 60000; // 60,000ms = דקה
 
+    async function fetchIndices() {
     async function fetchSP500() {
       try {
+        const response = await fetch(API_URL, {
+          headers: {
+            "Authorization": `Bearer ${API_KEY}`
+          }
+        });
+        if (!response.ok) throw new Error("שגיאה בטעינת הנתונים");
         const url = `https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=${symbol}&apikey=${apiKey}`;
         const response = await fetch(url);
         const data = await response.json();
+        const tableBody = document.querySelector("#indicesTable tbody");
+        // ניקוי הטבלה לפני הכנסת נתונים
+        tableBody.innerHTML = "";
+        data.forEach(index => {
+          const row = document.createElement("tr");
+          row.innerHTML = `
+            <td>${index.name}</td>
+            <td>${index.symbol}</td>
+            <td>${index.value}</td>
+            <td>${index.change}</td>
+          `;
+          tableBody.appendChild(row);
+        });
+      } catch (error) {
+        console.error("Error fetching indices:", error);
         const latestDate = Object.keys(data['Time Series (Daily)'])[0];
         const latestClose = data['Time Series (Daily)'][latestDate]['4. close'];
         document.getElementById('sp500').textContent = `מחיר סגירה אחרון (${latestDate}): $${latestClose}`;
@@ -28,11 +128,23 @@
       }
     }
 
+    // טעינת הנתונים בעת טעינת הדף
+    fetchIndices();
     // קריאה ראשונית
     fetchSP500();
     // עדכון אוטומטי כל דקה
     setInterval(fetchSP500, interval);
   </script>
 </body>
+        <div class="buttons">
+            <a href="index.html" class="btn">חזרה לדף הבית</a>
+            <a href="about.html" class="btn">דף מידע נוסף</a>
+        </div>
+    </section>
 </html>
 
+    <footer class="stats-footer">
+        <p>© 2025 דף פנסיוני לדוגמה</p>
+    </footer>
+</body>
+</html>
